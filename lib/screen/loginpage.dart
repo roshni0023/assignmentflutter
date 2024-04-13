@@ -1,4 +1,3 @@
-
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:assignmentflutter/screen/registration.dart';
@@ -7,8 +6,7 @@ import 'package:assignmentflutter/utils/textThemes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../utils/const_snackbar.dart';
-import 'home.dart';
-
+import 'listView/home.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -16,8 +14,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage>{
-  String username = 'admin';
-  String password = 'ram456';
+  String username = 'Priya Roy';
+  String password = 'priya123';
 
   var usercontroller = TextEditingController();
   var pwdcontroller = TextEditingController();
@@ -37,24 +35,31 @@ class _LoginPageState extends State<LoginPage>{
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          //to avoid scrollable action
-          // physics: const NeverScrollableScrollPhysics(),
+           physics: const NeverScrollableScrollPhysics(),
           child: Padding(
             padding: const EdgeInsets.all(15.0),
             child: Form(
               key:formkey,
               child: Column(
                 children: [
-                  const SizedBox(height: 50), // Adding space at the top
+                  const SizedBox(height: 15),
+                  Align(
+                    alignment: Alignment.topCenter,
+                    child: Image.asset("assets/image/background.png"),
+                  ),
                   Text(
-                      "Login Page",
+                      "welcome back",
                       style:MyTextThemes.textHeading
                   ),
                   const SizedBox(
                     height: 15,
                   ),
+                 // Align(
+                   // alignment: Alignment.topRight,
+                    //child: Image.asset("assets/image/leaf.png"),
+                  //),
                   Text(
-                      "Login To Your Account",
+                      "Login to your account",
                       style: MyTextThemes.bodyTextStyle
                   ),
                   const SizedBox(
@@ -72,8 +77,8 @@ class _LoginPageState extends State<LoginPage>{
                     decoration: const InputDecoration(
                       prefixIcon: Icon(Icons.person_outline_outlined),
                       border: OutlineInputBorder(),
-                      labelText: "Email",
-                      hintText: 'Enter your email here',
+                      labelText: "Full Name",
+                      hintText: 'Enter your full name here',
                     ),
                   ),
                   const SizedBox(
@@ -91,11 +96,11 @@ class _LoginPageState extends State<LoginPage>{
                     obscureText: true,
                     obscuringCharacter: '*',
                     decoration: const InputDecoration(
-                      prefixIcon: Icon(Icons.password_outlined),
+                      prefixIcon: Icon(Icons.lock),
                       border: OutlineInputBorder(),
                       labelText: "Password",
                       hintText: 'Enter your password here',
-                      helperText: 'Password must contain upper and lowercase letters',
+                      helperText: 'Forget Password',
                     ),
                   ),
                   const SizedBox(
@@ -122,7 +127,7 @@ class _LoginPageState extends State<LoginPage>{
                   const SizedBox(height: 20), // Adjusted spacer
                   RichText(
                     text: TextSpan(
-                      text: "Not a User?",
+                      text: "Don't have an account?",
                       style: const TextStyle(
                         color: Colors.black,
                       ),
@@ -137,17 +142,11 @@ class _LoginPageState extends State<LoginPage>{
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
-                            color: Colors.black,
+                            color: Colors.green,
                           ),
                         )
                       ],
                     ),
-                  ),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.2),
-                  // Adding space at the bottom (20% of screen height)
-                  Image.network(
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSobOgxk48Fd0FDNEGuDlOYDVv51pV-oWmuZA&s",
-                    fit: BoxFit.cover,
                   ),
                 ],
               ),

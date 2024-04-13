@@ -1,4 +1,4 @@
-import 'package:assignmentflutter/screen/home.dart';
+import 'package:assignmentflutter/screen/listView/home.dart';
 import 'package:assignmentflutter/screen/loginpage.dart';
 import 'package:assignmentflutter/screen/registration.dart';
 import 'package:assignmentflutter/screen/splash_image_with_background.dart';

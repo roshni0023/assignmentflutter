@@ -1,19 +1,18 @@
-
 import 'package:flutter/material.dart';
 import 'package:assignmentflutter/screen/loginpage.dart';
 import 'package:assignmentflutter/utils/textThemes.dart';
 import '../utils/mycolors.dart';
-import 'home.dart';
+import 'listView/home.dart';
 
 class RegistrationPage extends StatefulWidget {
   @override
   State<RegistrationPage> createState() => _RegistrationPageState();
 }
-class _RegistrationPageState extends State<RegistrationPage> {
-  String username = "admin";
-  String email = "ram@gmail.com";
-  String password = 'ram456';
-  String confirmpassword = 'ram456';
+  class _RegistrationPageState extends State<RegistrationPage> {
+  String username = "Priya Roy";
+  String email = "priya@123";
+  String password = 'priya123';
+  String confirmpassword = 'priya123';
 
   var usercontroller = TextEditingController();
   var emailcontroller = TextEditingController();
@@ -30,7 +29,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
   }
 
   TextEditingController passController = TextEditingController();
-  var formkey = GlobalKey<FormState>();// formkey used to monitor the state of entire form and validate it
+  var formkey = GlobalKey<FormState>();
   var pwd_visibility = true;
 
   @override
@@ -38,24 +37,22 @@ class _RegistrationPageState extends State<RegistrationPage> {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          //to avoid scrollable action
-          //physics: const NeverScrollableScrollPhysics(),
           child: Padding(
             padding: const EdgeInsets.all(15.0),
             child: Form(
-              key:formkey,// if we do not set key here validation will not occur
+              key:formkey,
               child: Column(
                 children: [
-                  const SizedBox(height: 50), // Adding space at the top
+                  const SizedBox(height: 50),
                   Text(
-                      "SignUp Page",
+                      "Register",
                       style: MyTextThemes.textHeading
                   ),
                   const SizedBox(
                     height: 15,
                   ),
                   Text(
-                      "Create Your Account",
+                      "Create your new account",
                       style: MyTextThemes.bodyTextStyle
                   ),
                   const SizedBox(
@@ -65,8 +62,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     decoration: InputDecoration(
                       prefixIcon: Icon(Icons.person_outline_outlined),
                       border: OutlineInputBorder(),
-                      labelText: "UserName",
-                      hintText: 'Enter your Username here',
+                      labelText: "Full Name",
+                      hintText: 'Enter your full name here',
                     ),
                   ),
                   const SizedBox(
@@ -82,7 +79,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     } ,
                     controller: usercontroller,
                     decoration: const InputDecoration(
-                      prefixIcon: Icon(Icons.person_outline_outlined),
+                      prefixIcon: Icon(Icons.email_outlined),
                       border: OutlineInputBorder(),
                       labelText: "Email",
                       hintText: 'Enter your email here',
@@ -103,7 +100,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       }
                     },
                     decoration:  InputDecoration(
-                      prefixIcon: Icon(Icons.password_outlined),
+                      prefixIcon: Icon(Icons.lock),
                       suffixIcon: IconButton(
                           onPressed: () {
                             setState(() {
@@ -120,8 +117,6 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       border: OutlineInputBorder(),
                       labelText: "Password",
                       hintText: 'Enter your password here',
-                      helperText:
-                      'Password must contain upper and lowercase letters',
                     ),
                   ),
                   const SizedBox(
@@ -140,7 +135,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       }
                     },
                     decoration:  InputDecoration(
-                      prefixIcon: Icon(Icons.password_outlined),
+                      prefixIcon: Icon(Icons.lock),
                       suffixIcon: IconButton(
                           onPressed: () {
                             setState(() {
@@ -157,7 +152,6 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       border: OutlineInputBorder(),
                       labelText: "Confirm Password",
                       hintText: 'Confirm your password here',
-
                     ),
                   ),
                   const SizedBox(
@@ -177,7 +171,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     color: MyColors.basicColor,
                     minWidth: 200,
                     shape: const StadiumBorder(),
-                    child: const Text("Register"),
+                    child: const Text("Sign up"),
                   ),
                   const SizedBox(height: 20), // Adjusted spacer
                   TextButton(
@@ -186,7 +180,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                             MaterialPageRoute(builder: (context) => LoginPage()));
                       },
                       child: Text(
-                          "Already Registered?? SignIn Here!!",
+                          "Don't have an account? Sign up",
                           style: MyTextThemes.bodyTextStyle))
                 ],
               ),
