@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:assignmentflutter/screen/gridview/gridview1.dart';
 import 'package:assignmentflutter/screen/listView/listview_separated.dart';
 import 'package:assignmentflutter/screen/registration.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,7 @@ class Splash_with_Image extends StatelessWidget {
   Widget build(BuildContext context) {
     Timer(const Duration(seconds: 3), () {
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => ListView_separated()));
+          context, MaterialPageRoute(builder: (context) => GridView1()));
     });
     return Scaffold(
       body: Container(
