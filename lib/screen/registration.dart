@@ -10,7 +10,7 @@ class RegistrationPage extends StatefulWidget {
 }
   class _RegistrationPageState extends State<RegistrationPage> {
   String username = "Priya Roy";
-  String email = "priya@123";
+  String email = "priya23@gmail.com";
   String password = 'priya123';
   String confirmpassword = 'priya123';
 

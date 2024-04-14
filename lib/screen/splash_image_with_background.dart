@@ -10,7 +10,7 @@ class Splash_with_Image extends StatelessWidget {
   Widget build(BuildContext context) {
     Timer(const Duration(seconds: 3), () {
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => RegistrationPage()));
+          context, MaterialPageRoute(builder: (context) => LoginPage()));
     });
     return Scaffold(
       body: Container(

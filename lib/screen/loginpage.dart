@@ -33,20 +33,21 @@ class _LoginPageState extends State<LoginPage>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-           physics: const NeverScrollableScrollPhysics(),
-          child: Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: Form(
-              key:formkey,
+        body: SingleChildScrollView(
               child: Column(
                 children: [
-                  const SizedBox(height: 15),
-                  Align(
-                    alignment: Alignment.topCenter,
-                    child: Image.asset("assets/image/background.png"),
-                  ),
+                Container(
+                  height: 300,
+                  width: 600,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(25), bottomRight: Radius.circular(100)
+            ),
+            image: const DecorationImage(
+                fit: BoxFit.cover,
+                image: AssetImage(
+                    "assets/image/background.png"))),
+                ),
                   Text(
                       "welcome back",
                       style:MyTextThemes.textHeading
@@ -151,9 +152,6 @@ class _LoginPageState extends State<LoginPage>{
                 ],
               ),
             ),
-          ),
-        ),
-      ),
     );
   }
 }
