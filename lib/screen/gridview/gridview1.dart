@@ -31,7 +31,7 @@ class GridView1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Country'),
+          title: const Text('GridView()'),
         ),
         body: GridView.builder(
         gridDelegate:const SliverGridDelegateWithFixedCrossAxisCount(
